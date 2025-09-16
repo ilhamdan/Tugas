@@ -25,9 +25,9 @@
 
     3. Mengelola keranjang
                     User di halaman keranjang (?page=cart)
-                    ↓
+                                  ⬇️ 
                     Cart::getItems() tampilkan semua item
-                    ↓
+                                  ⬇️      
                     User bisa:
                     - Hapus item (?action=remove&id=X)
                     - Update quantity (?action=update)
@@ -37,15 +37,15 @@
 
     4. Proses Checkout
                     User klik "Checkout" dari keranjang
-                    ↓
+                                     ⬇️       
                     Validasi: jika keranjang kosong → redirect ke cart
-                    ↓
+                                     ⬇️           
                     Tampilkan form checkout di form_checkout.php
-                    ↓
+                                      ⬇️  
                     User submit form → redirect ke ?page=out
-                    ↓
+                                      ⬇️      
                     Cart::clear() kosongkan keranjang
-                    ↓
+                                     ⬇️       
                     Tampilkan halaman konfirmasi
 
  **State Management**
