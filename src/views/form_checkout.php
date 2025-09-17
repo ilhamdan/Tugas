@@ -4,19 +4,19 @@
 <div class="bg-white rounded-lg shadow-md p-6">
     <div class="mb-6">
         <h2 class="text-lg font-semibold mb-3">Ringkasan Pesanan</h2>
-        <?php foreach ($cart->getItems() as $item): ?>
+        <?php foreach ($keranjang->ambilSemuaBarang() as $barang): ?>
         <div class="flex justify-between py-1">
-            <span><?= htmlspecialchars($item['name']) ?> (<?= $item['qty'] ?>x)</span>
-            <span>Rp <?= number_format($item['price'] * $item['qty'], 0, ',', '.') ?></span>
+            <span><?= htmlspecialchars($barang['nama']) ?> (<?= $barang['jumlah'] ?>x)</span>
+            <span>Rp <?= number_format($barang['harga'] * $barang['jumlah'], 0, ',', '.') ?></span>
         </div>
         <?php endforeach; ?>
         <div class="flex justify-between font-bold text-lg mt-3 pt-3 border-t">
             <span>Total:</span>
-            <span>Rp <?= number_format($cart->getTotal(), 0, ',', '.') ?></span>
+            <span>Rp <?= number_format($keranjang->hitungTotalHarga(), 0, ',', '.') ?></span>
         </div>
     </div>
     
-    <form method="post" action="?page=out">
+    <form method="post" action="?page=selesai">
         <div class="mb-4">
             <label class="block text-gray-700 mb-2">Nama Lengkap</label>
             <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>

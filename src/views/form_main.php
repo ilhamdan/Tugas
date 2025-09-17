@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="mt-6 text-center">
-        <a href="?page=products" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+        <a href="?page=produk" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
             <i class="bi bi-bag"></i> Belanja Sekarang
         </a>
     </div>
