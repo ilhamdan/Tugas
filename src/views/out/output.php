@@ -4,9 +4,9 @@
     <p class="mb-6">Terima kasih telah berbelanja di toko kami. Pesanan Anda akan segera diproses.</p>
     <div class="bg-gray-50 p-4 rounded-lg mb-6">
         <p class="font-semibold">Kode Pesanan: <span class="text-blue-600">#ORD-12345</span></p>
-        <p>Total Pembayaran: <span class="text-blue-600">Rp <?= number_format($keranjang->hitungTotalHarga(), 0, ',', '.') ?></span></p>
+        <p>Total Pembayaran: <span class="text-blue-600">Rp <?= number_format($totalPesanan, 0, ',', '.') ?></span></p>
     </div>
-    <a href="?page=utama" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+    <a href="?page=main" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
         <i class="bi bi-house"></i> Kembali ke Beranda
     </a>
 </div>
