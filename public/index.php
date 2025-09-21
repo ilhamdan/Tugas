@@ -7,16 +7,17 @@ $page = $_GET['page'] ?? 'main';
 $contentFile = '';
 $keranjang = new Keranjang();
 
-// Handle aksi keranjang
 if (isset($_GET['aksi'])) {
     switch ($_GET['aksi']) {
         case 'tambah':
-            if (isset($_GET['id'])) {
-                $keranjang->tambahBarang($_GET['id'], 1);
-                header("Location: ?page=cart");
-                exit;
-            }
-            break;
+        if (isset($_GET['id'])) {
+            $jumlah = max(1, (int)($_GET['qty'] ?? 1)); // ambil qty dari input
+            $keranjang->tambahBarang($_GET['id'], $jumlah);
+            header("Location: ?page=cart");
+            exit;
+        }
+        break;
+
         case 'hapus':
             if (isset($_GET['id'])) {
                 $keranjang->hapusBarang($_GET['id']);
@@ -31,7 +32,6 @@ if (isset($_GET['aksi'])) {
     }
 }
 
-// Tentukan halaman yang akan ditampilkan
 switch ($page) {
     case 'products':
         $products = Produk::ambilSemua();
@@ -48,7 +48,6 @@ switch ($page) {
         $contentFile = __DIR__ . '/../src/views/form_checkout.php';
         break;
     case 'out':
-        // Simpan total harga sebelum mengosongkan keranjang
         $totalPesanan = $keranjang->hitungTotalHarga();
         $keranjang->kosongkanKeranjang();
         $contentFile = __DIR__ . '/../src/views/out/output.php';

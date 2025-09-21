@@ -10,12 +10,21 @@
         <h3 class="font-bold mb-1"><?= htmlspecialchars($product['name']) ?></h3>
         <p class="text-sm text-gray-600 mb-2"><?= htmlspecialchars($product['description']) ?></p>
         <div class="flex justify-between items-center">
-            <span class="text-blue-600 font-bold">Rp <?= number_format($product['price'], 0, ',', '.') ?></span>
-            <a href="?aksi=tambah&id=<?= $product['id'] ?>" 
-               class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 text-sm">
-                <i class="bi bi-cart-plus"></i> Tambah
-            </a>
+            <span class="text-blue-600 font-bold">
+                Rp <?= number_format($product['price'], 0, ',', '.') ?>
+            </span>
         </div>
+        <!-- Form tambah dengan qty -->
+        <form method="get" class="mt-3 flex items-center gap-2">
+            <input type="hidden" name="aksi" value="tambah">
+            <input type="hidden" name="id" value="<?= $product['id'] ?>">
+            <input type="number" name="qty" value="1" min="1" 
+                   class="w-16 border rounded px-2 py-1 text-center">
+            <button type="submit" 
+                    class="flex-1 bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 text-sm">
+                <i class="bi bi-cart-plus"></i> Tambah
+            </button>
+        </form>
     </div>
     <?php endforeach; ?>
 </div>
