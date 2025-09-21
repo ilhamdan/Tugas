@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
+
 <body class="bg-gray-100">
     <nav class="bg-blue-600 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
@@ -20,18 +22,19 @@
         </div>
     </nav>
     <main class="container mx-auto p-4">
-        <?php 
+        <?php
         if (!empty($contentFile)) {
             include $contentFile;
-        } 
+        }
         ?>
     </main>
     <footer class="bg-blue-600 text-white text-center py-4 mt-6">
         <p class="mb-0">
-           <i class="bi bi-code-slash"></i> Created by <strong>Ilham Dani</strong> 
+            <i class="bi bi-code-slash"></i> Created by <strong>Ilham Dani</strong>
         </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
